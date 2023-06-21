@@ -1,0 +1,62 @@
+
+.plan{
+    position: relative;
+}
+
+.plan h2{
+    font-size: 16px;
+}
+
+.plan label{
+    /* width: 100%; */
+    width: 130px;
+    height: 150px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.plan label:hover{
+    cursor: pointer;
+}
+
+.plan label h2{
+    margin-top: 20px;
+}
+.plan label p{
+    margin: 0;
+}
+
+.plan label img{
+    max-width: 50px;
+}
+ 
+.plan input[type="radio"]{
+    position: absolute;
+    top: 0;
+    left:0;
+    appearance: none;
+}
+
+input[type="radio"]:checked + label{
+    background-color: #EEF5FF;
+    border-color: #02295C;
+}
+
+
+@media(max-width: 645px){
+    .plan label{
+        width: 100%;
+        max-height: 100px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 10px;
+    }
+    .plan label h2{
+        margin: 0;
+    }
+}

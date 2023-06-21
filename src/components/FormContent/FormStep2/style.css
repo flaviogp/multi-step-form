@@ -1,0 +1,68 @@
+.form-step-two{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 450px;
+    position: relative;
+}
+
+.form-step-two .check-plans{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.check-mounthly-yearly{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    gap: 20px;
+    background-color: #EEF5FF;
+    border-radius: 5px;
+    padding: 10px;
+}
+.check-mounthly-yearly p{
+    margin: 0;
+}
+.check-mounthly-yearly input[type="checkbox"]{
+    appearance: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #02295C;
+    position: relative;
+}
+
+.check-mounthly-yearly input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+
+.check-mounthly-yearly input:checked[type="checkbox"]::before{
+    right: 4px;
+    left: auto;
+}
+
+@media(max-width: 645px){
+    .form-step-two{
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff
+    }
+    .form-step-two .check-plans{
+        display: flex;
+        flex-direction: column;
+    }
+}

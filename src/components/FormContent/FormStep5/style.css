@@ -1,0 +1,28 @@
+.form-step-five{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 100%;
+}
+
+
+.form-step-five h2{
+    margin-top: 30px;
+}
+.form-step-five p{
+    text-align: center;
+    line-height: 25px;
+}
+
+
+@media(max-width: 645px){
+    .form-step-five{
+        width: 100%;
+        max-height: 70vh;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff
+    }
+}

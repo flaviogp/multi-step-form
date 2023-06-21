@@ -1,0 +1,48 @@
+.step-container{
+    width: 100%;
+    gap: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.step{
+    background-color: transparent;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.step-selected{
+    background-color: #fff;
+    color: #000;
+}
+
+.info-step{
+    color: #fff
+}
+.info-step span {
+    font-weight: 400;
+}
+.info-step p {
+    font-weight: 500;
+}
+
+
+@media(max-width: 645px){
+
+    .info-step span, .info-step p {
+        display: none;
+    }
+    .step-container{
+        width: max-content;
+    }
+}

@@ -1,0 +1,49 @@
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  
+  .buttons .back{
+    font-weight: 700;
+    color: #89898a;
+  }
+  .buttons .back:hover{
+    color: #02295C;
+  }
+  .buttons .next{
+    font-weight: 700;
+    color: #fff;
+    padding: 15px 20px;
+    background-color: #02295C;
+    border-radius: 5px;
+  }
+  .buttons .confirm{
+    font-weight: 700;
+    color: #fff;
+    padding: 15px 20px;
+    background-color:#4A3DFE;
+    ;
+    border-radius: 5px;
+  }
+  
+  
+  button:disabled{
+    visibility: hidden;
+  }
+
+  @media(max-width: 645px){
+    .buttons {
+      background-color: #fff;
+      padding: 20px;
+      /* position: absolute;
+      bottom: 0;
+      left: 0; */
+      width: 100%;
+    }
+  
+}

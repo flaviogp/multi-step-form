@@ -1,0 +1,27 @@
+.form-step-three{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 450px;
+    position: relative;
+}
+
+
+.form-step-three .check-service{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+@media(max-width: 645px){
+    .form-step-three{
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff
+    }
+
+}
