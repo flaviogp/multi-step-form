@@ -6,7 +6,12 @@ export default function Plan({plan, price, img}){
     const [formState, dispatch] = useContext(FormContext);
     return(
         <div className="plan">
-                <input type="radio" name="radio" id={plan} onChange={(e)=> dispatch({type: "CHANGE_PLAN", payload: e.target.id})}/>
+                <input type="radio" 
+                        name="radio" 
+                        id={plan} 
+                        onChange={(e)=> dispatch({type: "CHANGE_PLAN", payload: e.target.id})}
+                        checked={formState.plan.selected}
+                        />
             <label htmlFor={plan}>
                 <img src={img} alt={plan} />
                 <div className="info">

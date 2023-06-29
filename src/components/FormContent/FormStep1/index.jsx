@@ -1,25 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import "./style.css";
 
 import HeadForm from "../HeadForm";
+import ErrorMessage from '../../ErrorMessage'
 
 import { FormContext } from "../../../context/form";
 
 export default function FormStep1() {
   const [formState, dispatch] = useContext(FormContext);
+
+  
   return (
     <div className="form-step-one">
       <HeadForm
         title="Personal info"
         subTitle="Please provide your name, email address, and phone number"
       />
+      {formState.error !== '' && <ErrorMessage msg={formState.error}/>}
       <form className="form" action="">
         <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
-          onChange={(e) =>
+          onChange={(e) => 
             dispatch({ type: "CHANGE_NAME", payload: e.target.value })
           }
         />
@@ -35,7 +39,7 @@ export default function FormStep1() {
         <input
           type="tel"
           id="phone"
-          placeholder="(dd)99999-9999"
+          placeholder="dd 99999-9999"
           onChange={(e) =>
             dispatch({ type: "CHANGE_PHONE", payload: e.target.value })
           }

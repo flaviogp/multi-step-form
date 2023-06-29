@@ -7,7 +7,7 @@ import proImg from '../../../assets/images/icon-pro.svg'
 
 import Plan from './Plan'
 import HeadForm from '../HeadForm';
-import FluxButtons from '../FluxButtons'
+import ErrorMessage from '../../ErrorMessage'
 
 import { FormContext } from '../../../context/form';
 export default function FormStep2(){
@@ -19,10 +19,12 @@ export default function FormStep2(){
                 title="Slect your plan"
                 subTitle="You have the option of monthly or yearly billing"
             />
+            {formState.error && <ErrorMessage msg={formState.error}/>}
             <div className="check-plans">
                 <Plan plan='arcade' 
                       price={`R$ ${formState.mounthly === true ? "15,00" : "45,00"}`} 
-                      img={arcadeImg}/>
+                      img={arcadeImg}
+                      />
                 <Plan plan='advanced'
                       price={`R$ ${formState.mounthly === true ? "20,00" : "50,00"}`} 
                       img={advancedImg}/>
@@ -32,7 +34,14 @@ export default function FormStep2(){
             </div>
             <div className="check-mounthly-yearly">
                 <p>Mounthly</p>
-                <input type="checkbox" name="" id="mounthly-yearly" onChange={()=> dispatch({type: "CHANGE_METHOD"})}/>
+                <input 
+                    type="checkbox" 
+                    name="" 
+                    id="mounthly-yearly" 
+                    onChange={(e)=> {
+                        dispatch({type: "CHANGE_METHOD"})
+                        dispatch({type: "CHANGE_PLAN", payload: e.target.id})
+                    }} />
                 <p>Yearly</p>
             </div>
         </div>

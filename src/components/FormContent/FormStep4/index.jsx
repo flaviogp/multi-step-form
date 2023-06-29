@@ -13,11 +13,11 @@ export default function FormStep4(){
         const plan = parseFloat(formState.plan.price);
         let priceServices = [];
         let totalServices = 0
-        if(formState.services.length > 1){
+        if(formState.services.length >= 1){
             formState.services.map(service => priceServices.push(parseFloat(service.price)))
             totalServices = priceServices.reduce((acc, value) => acc += value)
         }
-        return totalServices === 0 ? 0 : totalServices + plan;
+        return totalServices === 0 ? plan : totalServices + plan;
     }
     return(
         <div className="form-step-four">

@@ -7,10 +7,12 @@ const initialState = {
   phone: "",
   mounthly: true,
   plan: {
+    selected: false,
     name: "",
     price: "",
   },
   services:[],
+  error: ""
 };
 
 const formReducer = (state, action) => {
@@ -53,7 +55,8 @@ const formReducer = (state, action) => {
         mounthly: !state.mounthly,
       };
     case "CHANGE_PLAN":
-      let newState = { ...state, plan: { name: action.payload } };
+      let newState = { ...state, plan: { selected: true, name: action.payload } };
+      if (action.payload === "mounthly-yearly") newState = { ...newState, plan: { ...newState.plan, selected: false } };
       if (action.payload === "arcade") {
         if (state.mounthly === true) {
           newState = { ...newState, plan: { ...newState.plan, price: 15 } };
@@ -97,6 +100,9 @@ const formReducer = (state, action) => {
           price: "",
         },
         services:[] 
+      }
+    case "ERROR" :{
+      return { ...state, error: action.payload };
       }
     case "SEND_FORM" :{
       console.log(state)

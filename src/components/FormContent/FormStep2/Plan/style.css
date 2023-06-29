@@ -44,6 +44,10 @@ input[type="radio"]:checked + label{
     background-color: #EEF5FF;
     border-color: #02295C;
 }
+input[type="radio"]:not(:checked) + label{
+    background-color: none;
+    border-color: #ccc;
+}
 
 
 @media(max-width: 645px){
